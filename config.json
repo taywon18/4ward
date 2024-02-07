@@ -1,0 +1,10 @@
+{
+  "port": 1235,
+  "endpoints": {
+    "/testapi": {
+      "method": "get",
+      "type": "command",
+      "command": "echo lol"
+    }
+  }
+}
