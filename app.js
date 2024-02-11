@@ -53,7 +53,7 @@ for (let [ep, epconfig] of Object.entries(config.endpoints)) {
     else if (method == "delete")
         app.delete(ep, function (req, res) {
             handleAnySecured(req, res, epconfig);
-        });
+});
     else {
         console.error(`Unknown method ${method}'.`);
         return 1;
