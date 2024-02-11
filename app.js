@@ -35,7 +35,6 @@ if (config.endpoints == undefined) {
     return 1;
 }
 
-
 for (let [ep, epconfig] of Object.entries(config.endpoints)) {
     const method = epconfig.method || "get";
     if (method == "get")
@@ -53,7 +52,7 @@ for (let [ep, epconfig] of Object.entries(config.endpoints)) {
     else if (method == "delete")
         app.delete(ep, function (req, res) {
             handleAnySecured(req, res, epconfig);
-        });
+});
     else {
         console.error(`Unknown method ${method}'.`);
         return 1;
