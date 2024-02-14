@@ -35,6 +35,10 @@ if (config.endpoints == undefined) {
     return 1;
 }
 
+app.get("/", function (req, res) {
+    res.status(200).json({ "worked": true });
+});
+
 for (let [ep, epconfig] of Object.entries(config.endpoints)) {
     const method = epconfig.method || "get";
     if (method == "get")
@@ -60,5 +64,5 @@ for (let [ep, epconfig] of Object.entries(config.endpoints)) {
 }
 
 app.listen(port, function () {
-    console.log(`Listening on port ${port} (try it on http://localhost:${port} ?)!`);
+    console.log(`Listening on port ${port} (try it on http://localhost:${port}/)!`);
 });
